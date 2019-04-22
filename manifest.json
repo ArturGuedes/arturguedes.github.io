@@ -1,0 +1,20 @@
+{
+    "short_name": "Artur Guedes",
+    "name": "ArturGuedes",
+    "icons": [
+      {
+        "src": "image/icon_96.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "image/icon_192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ],
+    "start_url": "index.html",
+    "theme_color": "#191919",
+    "background_color": "#191919",
+    "display": "standalone"
+  }
