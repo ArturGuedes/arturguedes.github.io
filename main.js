@@ -1,16 +1,4 @@
-// REGISTRAR SERVICE WORKER
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-        navigator.serviceWorker.register('sw.js').then(function (registration) {
-            // Registro OK
-            console.log('ServiceWorker registrado com sucesso ', registration.scope);
-        }, function (err) {
-            // Ragistro não funcionou :(
-            console.log('Falha no registro do ServiceWorker ', err);
-        });
-    });
-}
-
+// Console.log
 (function () {
     var old = console.log;
     var logger = document.querySelector('.log');
@@ -22,3 +10,17 @@ if ('serviceWorker' in navigator) {
         }
     }
 })();
+
+
+// REGISTRAR SERVICE WORKER
+if ('serviceWorker' in navigator) {
+    console.log('CLIENT: service worker registration in progress.');
+    navigator.serviceWorker.register('sw.js').then(function() {
+      console.log('CLIENT: service worker registration complete.');
+    }, function() {
+      console.log('CLIENT: service worker registration failure.');
+    });
+  } else {
+    console.log('CLIENT: service worker is not supported.');
+}
+
