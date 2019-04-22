@@ -1,4 +1,4 @@
-var CACHE_VERSION = '1.9.3'
+var CACHE_VERSION = '1.9.4'
 var CACHE_NAME = 'cache-v' + CACHE_VERSION;
 var urlsToCache = [
   '/',
@@ -19,13 +19,10 @@ self.addEventListener('install', function (event) {
 
 self.addEventListener('fetch', (event) => {
   event.respondWith(async function() {
-    const cache = await caches.open(CACHE_NAME);
-    const cachedResponse = await cache.match(event.request);
-    if (cachedResponse) return cachedResponse;
-    const networkResponse = await fetch(event.request);
-    event.waitUntil(
-      cache.put(event.request, networkResponse.clone())
-    );
-    return networkResponse;
+    try {
+      return await fetch(event.request);
+    } catch (err) {
+      return caches.match(event.request);
+    }
   }());
 });
