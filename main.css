@@ -9,8 +9,13 @@ body {
   height: 100vh;
   box-sizing: border-box;
 }
-h1 {
+h1,
+p {
   margin-bottom: 20px;
+}
+code {
+  background: black;
+  outline: 1px solid #474000;
 }
 .container {
   margin: 0 auto;
