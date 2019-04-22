@@ -1,4 +1,4 @@
-var CACHE_VERSION = '1.7'
+var CACHE_VERSION = '1.8'
 var CACHE_NAME = 'cache-v' + CACHE_VERSION;
 var urlsToCache = [
   '/',
@@ -31,21 +31,4 @@ self.addEventListener('fetch', (event) => {
     // Returned the cached response if we have one, otherwise return the network response.
     return cachedResponse || networkResponsePromise;
   }());
-});
-
-self.addEventListener('activate', function (event) {
-
-  var cacheWhitelist = ['pages-cache-v1', 'blog-posts-cache-v1'];
-
-  event.waitUntil(
-    caches.keys().then(function (cacheNames) {
-      return Promise.all(
-        cacheNames.map(function (cacheName) {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
 });
