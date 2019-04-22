@@ -1,7 +1,7 @@
 var CACHE_VERSION = '1.6'
 var CACHE_NAME = 'cache-v' + CACHE_VERSION;
 
-const PRECACHE = 'precache-v4';
+const PRECACHE = 'precache-v5';
 const RUNTIME = 'runtime';
 
 var CACHE_FILES = [
