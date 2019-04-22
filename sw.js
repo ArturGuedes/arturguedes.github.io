@@ -1,4 +1,4 @@
-var CACHE_VERSION = '1.9.6'
+var CACHE_VERSION = '1.9.6a'
 var CACHE_NAME = 'cache-v' + CACHE_VERSION;
 var urlsToCache = [
   '/',
