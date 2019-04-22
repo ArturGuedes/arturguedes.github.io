@@ -1,4 +1,4 @@
-var CACHE_VERSION = '1.9.6a'
+var CACHE_VERSION = '1.9.6b'
 var CACHE_NAME = 'cache-v' + CACHE_VERSION;
 var urlsToCache = [
   '/',
@@ -19,8 +19,14 @@ self.addEventListener('install', function (event) {
 
 self.addEventListener('fetch', function(event) {
   event.respondWith(
-    fetch(event.request).catch(function() {
-      return caches.match(event.request);
-    })
+    caches.match(event.request)
+      .then(function(response) {
+        // Cache hit - return response
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      }
+    )
   );
 });
