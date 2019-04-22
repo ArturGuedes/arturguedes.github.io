@@ -1,4 +1,4 @@
-var CACHE_VERSION = '1.9.5'
+var CACHE_VERSION = '1.9.6'
 var CACHE_NAME = 'cache-v' + CACHE_VERSION;
 var urlsToCache = [
   '/',
@@ -17,12 +17,10 @@ self.addEventListener('install', function (event) {
   );
 });
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(async function() {
-    try {
-      return await fetch(event.request);
-    } catch (err) {
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    fetch(event.request).catch(function() {
       return caches.match(event.request);
-    }
-  }());
+    })
+  );
 });
