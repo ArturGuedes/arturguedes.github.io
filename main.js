@@ -15,12 +15,18 @@
 // REGISTRAR SERVICE WORKER
 if ('serviceWorker' in navigator) {
     console.log('CLIENT: service worker registration in progress.');
-    navigator.serviceWorker.register('sw.js').then(function() {
-      console.log('CLIENT: service worker registration complete.');
-    }, function() {
-      console.log('CLIENT: service worker registration failure.');
+    navigator.serviceWorker.register('sw.js').then(function () {
+        console.log('CLIENT: service worker registration complete.');
+
+        if(navigator.onLine){
+            console.log("ONLINE");
+        }else{
+            console.log("OFFLINE");
+        }
+
+    }, function () {
+        console.log('CLIENT: service worker registration failure.');
     });
-  } else {
+} else {
     console.log('CLIENT: service worker is not supported.');
 }
-

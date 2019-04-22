@@ -1,4 +1,4 @@
-var CACHE_VERSION = '2.1.2'
+var CACHE_VERSION = '2.1.3'
 var CACHE_NAME = 'cache-v' + CACHE_VERSION;
 var urlsToCache = [
   '/',
@@ -14,12 +14,14 @@ this.addEventListener('install', function(event) {
   );
 });
 
-this.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
-    })
-  );
+self.addEventListener('fetch', (event) => {
+  event.respondWith(async function() {
+    try {
+      return await fetch(event.request);
+    } catch (err) {
+      return caches.match(event.request);
+    }
+  }());
 });
 
 this.addEventListener('activate', function(event) {
