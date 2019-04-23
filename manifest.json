@@ -1,20 +1,35 @@
 {
-    "short_name": "Artur Guedes",
-    "name": "ArturGuedes",
-    "icons": [
-      {
-        "src": "image/icon_96.png",
-        "type": "image/png",
-        "sizes": "96x96"
-      },
-      {
-        "src": "image/icon_192.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      }
-    ],
-    "start_url": "index.html",
-    "theme_color": "#191919",
-    "background_color": "#191919",
-    "display": "standalone"
+  "name": "Artur Guedes - PWA",
+  "short_name": "Artur Guedes",
+  "description": "Um pequeno app de testes.",
+  "lang": "pt-BR",
+  "start_url": "index.html",
+  "theme_color": "#191919",
+  "background_color": "#191919",
+  "display": "standalone",
+  "icons": [{
+      "src": "image/icon_96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "image/icon_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "image/icon_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "share_target": {
+    "action": "/new-topic",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "body"
+    }
   }
+}
