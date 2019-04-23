@@ -49,6 +49,7 @@ function share() {
 
 // Login com o google
 // https://mariovalney.com/como-colocar-o-login-do-google-no-meu-site/
+// https://developers.google.com/identity/sign-in/web/sign-in
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
