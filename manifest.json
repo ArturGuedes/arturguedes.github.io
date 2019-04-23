@@ -7,11 +7,7 @@
   "theme_color": "#191919",
   "background_color": "#191919",
   "display": "standalone",
-  "icons": [{
-      "src": "image/icon_96.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
+  "icons": [
     {
       "src": "image/icon_192.png",
       "type": "image/png",
