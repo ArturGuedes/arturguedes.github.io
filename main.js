@@ -48,11 +48,13 @@ function share() {
 }
 
 // Login com o google
+// https://mariovalney.com/como-colocar-o-login-do-google-no-meu-site/
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
     console.log('Name: ' + profile.getName());
-    document.querySelector('.title').innerText = userName;
+    document.querySelector('.title').innerText = profile.getName();
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  }
+    console.log(googleUser.getAuthResponse().id_token);
+}
