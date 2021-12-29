@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: arturguedes.github.io
+Token: 173f334c96ae4d7d175c676dfb1bb2eebef151787664cd6e0741c82232eda273
