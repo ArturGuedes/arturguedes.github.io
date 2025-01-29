@@ -1,39 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="/icons/apple-touch-icon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AGX</title>
-
-  <link rel="icon" href="icon.ico" sizes="any" />
-  <link rel="icon" href="icon.svg" sizes="any" type="image/svg+xml" />
-  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" /> -->
-  <!-- <meta name="apple-mobile-web-app-title" content="AGX" /> -->
-  <!-- <link rel="manifest" href="/icons/site.webmanifest" /> -->
-
-
-  <script type="text/javascript">
-    (function (l) {
-      if (l.search[1] === "/") {
-        var decoded = l.search
-          .slice(1)
-          .split("&")
-          .map(function (s) {
-            return s.replace(/~and~/g, "&");
-          })
-          .join("?");
-        window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
-      }
-    })(window.location);
-  </script>
-  <script type="module" crossorigin src="/assets/index-CIBBivj8.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CNQdo7q8.css">
 </head>
 
 <body>
   <div id="root"></div>
   <div id="modal-portal"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
