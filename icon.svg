@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="824px" height="824px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-11045.6,-18256.4)">
+        <g transform="matrix(1,0,0,1,1222.24,246.737)">
+            <g transform="matrix(3.20623,0,0,3.19293,-21524.7,-40932.6)">
+                <g>
+                    <rect x="9777.26" y="18460.2" width="257" height="258.07" style="fill:rgb(9,9,11);"/>
+                </g>
+            </g>
+            <g transform="matrix(0.91347,0,0,0.91347,837.34,743.443)">
+                <text x="9990.7px" y="19262.5px" style="font-family:'CourierNewPSMT', 'Courier New', monospace;font-size:177.346px;fill:rgb(102,102,102);">▐</text>
+                <text x="10237.2px" y="19262.5px" style="font-family:'CourierNewPSMT', 'Courier New', monospace;font-size:177.346px;fill:rgb(219,219,219);">▓</text>
+                <text x="10483.8px" y="19262.5px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:177.346px;fill:rgb(102,102,102);">▚</text>
+                <text x="9990.7px" y="19577.8px" style="font-family:'CourierNewPSMT', 'Courier New', monospace;font-size:177.346px;fill:rgb(102,102,102);">▒</text>
+                <text x="10237.2px" y="19577.8px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:177.346px;fill:rgb(44,44,44);">▛</text>
+                <g transform="matrix(177.346,0,0,177.346,10682.3,19577.8)">
+                </g>
+                <text x="10484.1px" y="19577.8px" style="font-family:'CourierNewPSMT', 'Courier New', monospace;font-size:177.346px;fill:rgb(102,102,102);">▄</text>
+            </g>
+        </g>
+    </g>
+</svg>
