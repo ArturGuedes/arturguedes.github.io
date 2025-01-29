@@ -1,54 +1,23 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Artur Guedes</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#191919">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGX</title>
 
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id"
-        content="570516599295-9g6ndsn3sju859pfm4m306bocjh5ts73.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="AGX" />
+  <link rel="manifest" href="/icons/site.webmanifest" />
+
+  <script type="module" crossorigin src="/assets/index-DhK4QrBV.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CNQdo7q8.css">
 </head>
 
 <body>
-    <div class="row banner">
-        <div class="container">
-            <h1 class="title">Em construção</h1>
-            <p>PWA 1.2 // Cache 2.1.6</p>
-
-            <a href="#" onclick="share()">Compartilhar</a>
-            <br><br>
-            <div class="g-signin2 makeFlex googleLoginBtn flexOne" data-onsuccess="onSignIn"></div>
-            <a href="#" onclick="signOut();">Sign out</a>
-            <script>
-                function signOut() {
-                    var auth2 = gapi.auth2.getAuthInstance();
-                    auth2.signOut().then(function () {
-                        console.log('User signed out.');
-                    });
-                }
-            </script>
-            <br><br>
-            <div class="log">
-            </div>
-        </div>
-    </div>
-
-
-    <script>
-
-    </script>
-    <script src="main.js"></script>
-
-
+  <div id="root"></div>
+  <div id="modal-portal"></div>
 </body>
 
 </html>
