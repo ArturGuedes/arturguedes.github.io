@@ -1,6 +1,8 @@
 {
   "name": "AGX",
   "short_name": "AGX",
+  "start_url": "/",
+  "display": "standalone",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,5 +17,10 @@
       "purpose": "maskable"
     }
   ],
-  "display": "standalone"
+  "shortcuts": [
+    {
+      "name": "Playground",
+      "url": "/#/playground"
+    }
+  ]
 }
