@@ -1,0 +1,28 @@
+{
+    "name": "modal",
+    "title": "Modal",
+    "description": "A Modal component",
+    "type": "registry:ui",
+    "author": "Artur Guedes <arturguedx@gmail.com>",
+    "docs": "To use import `import { ModalHeader, ModalMain, ModalRoot, useModalContext } from '@/components/ui/modal'` and `const { setModal } = useModalContext()`",
+    "registryDependencies": [
+        "button"
+    ],
+    "dependencies": [
+        "@radix-ui/react-focus-scope",
+        "lucide-react"
+    ],
+    "devDependencies": [],
+    "tailwind": {},
+    "cssVars": {
+        "light": {},
+        "dark": {}
+    },
+    "files": [
+        {
+            "path": "modal.jsx",
+            "type": "registry:ui",
+            "content": "import { FocusScope } from '@radix-ui/react-focus-scope'\nimport { X } from 'lucide-react'\nimport React, { useEffect, useState } from 'react'\nimport ReactDOM from 'react-dom'\n\nimport { Button } from '@/components/ui/button'\nimport { cn } from '@/lib/utils'\n\nconst modalRoot = document.createElement('div')\nmodalRoot.id = 'modal-portal'\ndocument.body.appendChild(modalRoot)\n\nconst ModalContext = React.createContext()\n\nfunction useModalContext() {\n  const context = React.useContext(ModalContext)\n  if (!context) throw new Error('useModalContext must be used within a <ModalRoot />')\n  return context\n}\n\nconst ModalProvider = ({ ...props }) => {\n  const [modal, setModal] = useState(null)\n  const closeModal = _ => setModal(null)\n\n  return <ModalContext.Provider value={{ modal, setModal, closeModal }} {...props} />\n}\n\nconst ModalRoot = React.forwardRef(({ name, className, children }, ref) => {\n  const { modal } = useModalContext()\n\n  useEffect(() => {\n    if (modal) document.body.style.overflow = 'hidden'\n    return () => (document.body.style.overflow = 'auto')\n  }, [modal])\n\n  return ReactDOM.createPortal(\n    <div\n      data-open={modal === name}\n      className='fixed flex items-center justify-center z-10 top-0 left-0 w-screen h-screen bg-background/50 transition-opacity duration-500 data-[open=false]:pointer-events-none data-[open=false]:opacity-10 data-[open=true]:opacity-100 data-[open=true]:backdrop-blur-[2px]'>\n      <FocusScope loop>\n        <section\n          role='dialog'\n          data-open={modal === name}\n          className={cn(\n            'bg-background rounded-2xl shadow-2xl m-8 transition-all duration-500 border border-solid data-[open=false]:opacity-0 data-[open=true]:opacity-100 data-[open=false]:translate-y-2 data-[open=true]:translate-x-0',\n            className\n          )}>\n          {children}\n        </section>\n      </FocusScope>\n    </div>,\n    modalRoot\n  )\n})\n\nconst ModalHeader = React.forwardRef(({ children, showClose, ...props }, ref) => {\n  const { closeModal } = useModalContext()\n  return (\n    <header\n      ref={ref}\n      className='flex w-full items-center justify-between gap-4 p-4 text-lg font-semibold leading-none tracking-tight'\n      {...props}>\n      {children}\n      {showClose && (\n        <Button variant='icon' size='icon' onClick={closeModal}>\n          <X />\n        </Button>\n      )}\n    </header>\n  )\n})\n\nconst ModalMain = React.forwardRef(({ children, className, ...props }, ref) => {\n  return (\n    <main ref={ref} className={cn('flex items-center gap-4 p-4 ', className)} {...props}>\n      {children}\n    </main>\n  )\n})\n\nconst ModalFooter = React.forwardRef(({ children, ...props }, ref) => {\n  return (\n    <footer ref={ref} className='flex items-center justify-end gap-2 p-4' {...props}>\n      {children}\n    </footer>\n  )\n})\n\nexport {\n  ModalContext,\n  ModalFooter,\n  ModalHeader,\n  ModalMain,\n  ModalProvider,\n  ModalRoot,\n  useModalContext,\n}\n"
+        }
+    ]
+}
