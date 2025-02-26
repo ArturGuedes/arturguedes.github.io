@@ -2,6 +2,7 @@
     "name": "modal",
     "title": "Modal",
     "description": "A Modal component",
+    "version": "1.0.0",
     "type": "registry:ui",
     "author": "Artur Guedes <arturguedx@gmail.com>",
     "docs": "To use import `import { ModalHeader, ModalMain, ModalRoot, useModalContext } from '@/components/ui/modal'` and `const { setModal } = useModalContext()`",
