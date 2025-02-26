@@ -21,6 +21,10 @@
     {
       "name": "Playground",
       "url": "/#/playground"
+    },
+    {
+      "name": "Pokemon",
+      "url": "/#/playground/pkm"
     }
   ]
 }
