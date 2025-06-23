@@ -1,4 +1,0 @@
-This is a Brave Creators publisher verification file.
-
-Domain: arturguedes.dev.br
-Token: 72e120b6c6b0e6f8a147d5dd160b3718d0a7efe70a2173e2f28e9814836f9358
