@@ -1,0 +1,20 @@
+{
+    "name": "useFileUpload",
+    "title": "useFileUpload",
+    "description": "A Modal component",
+    "version": "1.0.0",
+    "type": "registry:hook",
+    "author": "Artur Guedes <arturguedx@gmail.com>",
+    "docs": "To use import `import useFileUpload from '@/hooks/useFileUpload'` and `const { setFiles } = useFileUpload()`",
+    "registryDependencies": [],
+    "dependencies": [],
+    "devDependencies": [],
+    "tailwind": {},
+    "files": [
+        {
+            "path": "useFileUpload.jsx",
+            "type": "registry:hook",
+            "content": "function useFileUpload() {\n    function setFiles(\n      { accept = '*', multiple = false },\n      onLoad = () => [{ base64: '', name: '', type: '', size: 0 }]\n    ) {\n      const input = document.createElement('input')\n      input.type = 'file'\n      input.accept = accept\n      input.multiple = multiple\n      input.click()\n      input.onchange = async e => {\n        const files = []\n        for (const file of e.target.files) {\n          const reader = new FileReader()\n          reader.readAsDataURL(file)\n  \n          const onloadPromise = new Promise((resolve, reject) => {\n            reader.onerror = () => {\n              console.error(reader.error)\n              reject(reader.error)\n            }\n            reader.onload = () => {\n              const data = reader.result\n              files.push({\n                base64: data,\n                name: file.name,\n                type: file.type,\n                size: file.size,\n              })\n              resolve()\n            }\n          })\n          await onloadPromise\n        }\n        return onLoad(files)\n      }\n    }\n    return { setFiles }\n  }\n  \n  export default useFileUpload\n  \n"
+        }
+    ]
+}

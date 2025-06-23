@@ -1,0 +1,40 @@
+{
+  "name": "AGX",
+  "short_name": "AGX",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "1024x1024",
+      "src": "maskable_icon-1024x1024.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "android-chrome-512x512.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "192x192",
+      "src": "android-chrome-192x192.png",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Playground",
+      "url": "/#/playground"
+    },
+    {
+      "name": "Pokemon",
+      "url": "/#/playground/pkm"
+    },
+    {
+      "name": "Loteria",
+      "url": "/#/playground/loto"
+    }
+  ]
+}
